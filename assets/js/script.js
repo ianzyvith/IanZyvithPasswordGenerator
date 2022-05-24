@@ -2,7 +2,11 @@
 function generatePassword() {
 
 // reset variables if button is pressed again
-var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var optionLower = "abcdefghijklmnopqrstuvwxyz";
+var optionUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var optionNumber = "0123456789";
+var optionSymbol = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var chars = "";
 var passLength = "";
 var lowerCase = "";
 var upperCase = "";
@@ -46,104 +50,105 @@ var password = "";
 
 // build password function
 if (lowerCase === true && upperCase === true && numeric === true && symbols === true) {
+  var chars = optionLower + optionUpper + optionNumber + optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === true && upperCase === false && numeric === true && symbols === true) {
-  var chars = "abcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var chars = optionLower + optionNumber + optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === true && upperCase === true && numeric === false && symbols === true) {
-  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var chars = optionLower + optionUpper + optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === true && upperCase === false && numeric === false && symbols === true) {
-  var chars = "abcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var chars = optionLower + optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === true && upperCase === true && numeric === true && symbols === false) {
-  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var chars = optionLower + optionUpper + optionNumber;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === true && upperCase === false && numeric === true && symbols === false) {
-  var chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  var chars = optionLower + optionNumber;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === true && upperCase === true && numeric === false && symbols === false) {
-  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  var chars = optionLower + optionUpper;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === true && upperCase === false && numeric === false && symbols === false) {
-  var chars = "abcdefghijklmnopqrstuvwxyz";
+  var chars = optionLower;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === false && upperCase === true && numeric === true && symbols === true) {
-  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var chars = optionUpper + optionNumber + optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === false && upperCase === false && numeric === true && symbols === true) {
-  var chars = "0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var chars = optionNumber + optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === false && upperCase === true && numeric === false && symbols === true) {
-  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var chars = optionUpper + optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === false && upperCase === false && numeric === false && symbols === true) {
-  var chars = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  var chars = optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === false && upperCase === true && numeric === true && symbols === false) {
-  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var chars = optionUpper + optionNumber;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === false && upperCase === false && numeric === true && symbols === false) {
-  var chars = "0123456789";
+  var chars = optionNumber;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
 }
 
 else if (lowerCase === false && upperCase === true && numeric === false && symbols === false) {
-  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var chars = optionUpper;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
