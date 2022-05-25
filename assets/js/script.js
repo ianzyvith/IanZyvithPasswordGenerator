@@ -39,120 +39,43 @@ var password = "";
   var symbols = confirm("Would you like your password to contain special characters?");
 
 // validate whether or not at least one option has been chosen
-  if (lowerCase === false && upperCase === false && numeric === false && symbols === false) {
+  if (!lowerCase && !upperCase && !numeric && !symbols) {
     window.alert("You must select at least one category for your password!");
     generatePassword();
   }
 
-  else {
-
-  }
+  else {}
 
 // build password function
-if (lowerCase === true && upperCase === true && numeric === true && symbols === true) {
-  var chars = optionLower + optionUpper + optionNumber + optionSymbol;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
+  if (!lowerCase) {
+    optionLower = "";
   }
-}
 
-else if (lowerCase === true && upperCase === false && numeric === true && symbols === true) {
-  var chars = optionLower + optionNumber + optionSymbol;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
+  else {}
 
-else if (lowerCase === true && upperCase === true && numeric === false && symbols === true) {
-  var chars = optionLower + optionUpper + optionSymbol;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
+  if (!upperCase) {
+    optionUpper = "";
   }
-}
 
-else if (lowerCase === true && upperCase === false && numeric === false && symbols === true) {
-  var chars = optionLower + optionSymbol;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
+  else {}
 
-else if (lowerCase === true && upperCase === true && numeric === true && symbols === false) {
-  var chars = optionLower + optionUpper + optionNumber;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
+  if (!numeric) {
+    optionNumber = "";
   }
-}
 
-else if (lowerCase === true && upperCase === false && numeric === true && symbols === false) {
-  var chars = optionLower + optionNumber;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
+  else {}
 
-else if (lowerCase === true && upperCase === true && numeric === false && symbols === false) {
-  var chars = optionLower + optionUpper;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
+  if (!symbols) {
+    optionSymbol = "";
   }
-}
 
-else if (lowerCase === true && upperCase === false && numeric === false && symbols === false) {
-  var chars = optionLower;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
+  else {}
 
-else if (lowerCase === false && upperCase === true && numeric === true && symbols === true) {
-  var chars = optionUpper + optionNumber + optionSymbol;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
+  chars = optionLower + optionUpper + optionNumber + optionSymbol;
 
-else if (lowerCase === false && upperCase === false && numeric === true && symbols === true) {
-  var chars = optionNumber + optionSymbol;
   for (var i = 0; i <= passLength - 1; i++) {
     password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
   }
-}
-
-else if (lowerCase === false && upperCase === true && numeric === false && symbols === true) {
-  var chars = optionUpper + optionSymbol;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
-
-else if (lowerCase === false && upperCase === false && numeric === false && symbols === true) {
-  var chars = optionSymbol;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
-
-else if (lowerCase === false && upperCase === true && numeric === true && symbols === false) {
-  var chars = optionUpper + optionNumber;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
-
-else if (lowerCase === false && upperCase === false && numeric === true && symbols === false) {
-  var chars = optionNumber;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
-
-else if (lowerCase === false && upperCase === true && numeric === false && symbols === false) {
-  var chars = optionUpper;
-  for (var i = 0; i <= passLength - 1; i++) {
-    password = password + chars.charAt(Math.floor(Math.random() * Math.floor(chars.length - 1)));
-  }
-}
 
 console.log(lowerCase);
 console.log(upperCase);
